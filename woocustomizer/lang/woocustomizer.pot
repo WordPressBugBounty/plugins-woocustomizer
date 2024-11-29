@@ -2,7 +2,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: WooCustomizer\n"
-"POT-Creation-Date: 2024-08-12 14:42+0200\n"
+"POT-Creation-Date: 2024-11-28 15:01+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: \n"
 "Language-Team: Kaira\n"
@@ -1674,8 +1674,7 @@ msgid "Cart Page"
 msgstr ""
 
 #: includes/customizer/customizer-options.php:2197
-#: includes/customizer/customizer-options.php:2845
-msgid "Remove Coupons form"
+msgid "Disable Coupons"
 msgstr ""
 
 #: includes/customizer/customizer-options.php:2204
@@ -1991,6 +1990,10 @@ msgid ""
 "%1$s offers extra functionlaity to direct users straight to the checkout "
 "page, add the cart table to the checkout page & more customization settings "
 "for this feature."
+msgstr ""
+
+#: includes/customizer/customizer-options.php:2845
+msgid "Remove Coupons form"
 msgstr ""
 
 #: includes/customizer/customizer-options.php:2852

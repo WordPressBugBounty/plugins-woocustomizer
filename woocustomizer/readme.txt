@@ -5,7 +5,7 @@ Tags: customize woocommerce, ecommerce, woocommerce, online store, woocommerce a
 Requires at least: 5.0
 Tested up to: 6.6
 Requires PHP: 5.6
-Stable tag: 2.5.7
+Stable tag: 2.5.8
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -260,6 +260,12 @@ We've found out we're not really allowed to use the "Woo" prefix, so we've chang
 
 
 == Changelog ==
+
+= 2.5.8 =
+* Styling tweaks/fixes
+* Minor code refactoring
+* Updated the language .pot file
+* Compatibility updates for WC 9.4
 
 = 2.5.7 =
 * Styling tweaks/fixes
