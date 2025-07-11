@@ -5,7 +5,7 @@ Tags: customize woocommerce, ecommerce, woocommerce, online store, woocommerce a
 Requires at least: 5.0
 Tested up to: 6.8
 Requires PHP: 5.6
-Stable tag: 2.6.1
+Stable tag: 2.6.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -181,6 +181,8 @@ View [StoreCustomizer Pro features](https://storecustomizer.com/go/pro-features/
 
 = Related Products by Kaira =
 
+[Theme Site Kit](https://wordpress.org/plugins/theme-site-kit/): An all-in-one toolkit for essential WordPress site features.
+
 [Blockons](https://wordpress.org/plugins/blockons/): Advanced editor blocks and site addons for your WordPress site.
 
 [Linkt](https://wordpress.org/plugins/linkt/): Affiliate and Custom link tracking and management.
@@ -267,6 +269,12 @@ We've found out we're not really allowed to use the "Woo" prefix, so we've chang
 
 
 == Changelog ==
+
+= 2.6.3 =
+* Styling tweaks/fixes
+* Updated Freemius SDK
+* Version compatibility for WP 6.8 & WC 9.9
+* Updated the language .pot file
 
 = 2.6.1 =
 * Styling tweaks/fixes
