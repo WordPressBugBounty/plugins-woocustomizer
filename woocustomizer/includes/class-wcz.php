@@ -209,6 +209,7 @@ class WooCustomizer {
             );
             wp_localize_script( $this->_token . '-frontend', 'wcz_admin_stats', array(
                 'ajax_url' => admin_url( 'admin-ajax.php' ),
+                'nonce'    => wp_create_nonce( 'wcz_admin_product_stats' ),
             ) );
             wp_enqueue_script( $this->_token . '-frontend' );
         }

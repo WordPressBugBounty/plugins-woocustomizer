@@ -754,9 +754,19 @@ function wcz_admin_stats_modal() {
 
 // Footer Modal AJAX function
 function wcz_admin_get_product_stats() {
-    // Get $product ID from ajax
-    $product_id = $_POST['product_id'];
+    check_ajax_referer( 'wcz_admin_product_stats', 'nonce' );
+    if ( !current_user_can( 'manage_options' ) ) {
+        wp_die( esc_html__( 'You do not have permission to perform this action.', 'woocustomizer' ), '', array(
+            'response' => 403,
+        ) );
+    }
+    $product_id = ( isset( $_POST['product_id'] ) ? absint( wp_unslash( $_POST['product_id'] ) ) : 0 );
     $product = wc_get_product( $product_id );
+    if ( !$product ) {
+        wp_die( esc_html__( 'Invalid product.', 'woocustomizer' ), '', array(
+            'response' => 400,
+        ) );
+    }
     $product_limit = 4;
     ob_start();
     ?>

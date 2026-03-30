@@ -2,15 +2,15 @@
 
 /**
  * Plugin Name: StoreCustomizer
- * Version: 2.6.3
+ * Version: 2.6.5
  * Plugin URI: https://kairaweb.com/wordpress-plugins/woocustomizer/
  * Description: A store editor plugin for editing all WooCommerce store and product pages, cart, checkout and user account pages, all within the WordPress Customizer
  * Author: Kaira
  * Author URI: https://kairaweb.com/
  * Requires at least: 5.0
- * Tested up to: 6.8
+ * Tested up to: 6.9
  * WC requires at least: 3.2
- * WC tested up to: 9.9
+ * WC tested up to: 10.6
  * Text Domain: woocustomizer
  * Domain Path: /lang/
  * 
@@ -19,7 +19,7 @@
  * @author Kaira
  * @since 1.0.0
  */
-define( 'WCD_PLUGIN_VERSION', '2.6.3' );
+define( 'WCD_PLUGIN_VERSION', '2.6.5' );
 define( 'WCD_PLUGIN_URL', plugins_url( '', __FILE__ ) );
 if ( !defined( 'ABSPATH' ) ) {
     exit;
@@ -35,21 +35,21 @@ if ( function_exists( 'wcz_fs' ) ) {
                 // Include Freemius SDK.
                 require_once dirname( __FILE__ ) . '/freemius/start.php';
                 $wcz_fs = fs_dynamic_init( array(
-                    'id'              => '4668',
-                    'slug'            => 'woocustomizer',
-                    'premium_slug'    => 'woocustomizer-pro',
-                    'type'            => 'plugin',
-                    'public_key'      => 'pk_b12a9cb6205ed1d8256a177af56b4',
-                    'is_premium'      => false,
-                    'premium_suffix'  => 'Pro',
-                    'has_addons'      => false,
-                    'has_paid_plans'  => true,
-                    'trial'           => array(
+                    'id'               => '4668',
+                    'slug'             => 'woocustomizer',
+                    'premium_slug'     => 'woocustomizer-pro',
+                    'type'             => 'plugin',
+                    'public_key'       => 'pk_b12a9cb6205ed1d8256a177af56b4',
+                    'is_premium'       => false,
+                    'premium_suffix'   => 'Pro',
+                    'has_addons'       => false,
+                    'has_paid_plans'   => true,
+                    'trial'            => array(
                         'days'               => 14,
                         'is_require_payment' => true,
                     ),
-                    'has_affiliation' => 'selected',
-                    'menu'            => array(
+                    'has_affiliation'  => 'selected',
+                    'menu'             => array(
                         'slug'        => 'wcz_settings',
                         'contact'     => false,
                         'support'     => false,
@@ -58,7 +58,8 @@ if ( function_exists( 'wcz_fs' ) ) {
                             'slug' => 'woocommerce',
                         ),
                     ),
-                    'is_live'         => true,
+                    'is_live'          => true,
+                    'is_org_compliant' => true,
                 ) );
             }
             return $wcz_fs;

@@ -21,6 +21,7 @@
 				data: {
 					'action': 'wcz_admin_get_product_stats',
 					'product_id': wcz_adminstat_id,
+					'nonce': wcz_admin_stats.nonce,
 				},
 				success: function ( result ) {
 
