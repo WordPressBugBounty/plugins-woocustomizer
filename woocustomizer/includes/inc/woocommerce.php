@@ -65,8 +65,41 @@ add_filter( 'admin_body_class', 'wcz_admin_body_class' );
  * @return integer products per row.
  */
 if ( !function_exists( 'loop_columns' ) ) {
-    function wcz_woocommerce_loop_columns() {
-        return esc_attr( get_option( 'wcz-shop-pprow', woocustomizer_library_get_default( 'wcz-shop-pprow' ) ) );
+    /**
+     * Saved Products Per Row value, ignoring the customizer preview default.
+     *
+     * The customizer supplies this setting's default during preview even when it
+     * has never been saved, which would override the theme column count.
+     *
+     * @return string|false
+     */
+    function wcz_saved_products_per_row() {
+        global $wp_customize;
+        $setting = ( is_customize_preview() && $wp_customize ? $wp_customize->get_setting( 'wcz-shop-pprow' ) : false );
+        if ( $setting ) {
+            $undefined = new stdClass();
+            $posted = $setting->post_value( $undefined );
+            if ( $undefined !== $posted ) {
+                return $posted;
+            }
+            remove_filter( 'pre_option_wcz-shop-pprow', array($setting, '_preview_filter') );
+        }
+        $saved = get_option( 'wcz-shop-pprow', false );
+        if ( $setting ) {
+            add_filter( 'pre_option_wcz-shop-pprow', array($setting, '_preview_filter') );
+        }
+        return $saved;
+    }
+
+    function wcz_woocommerce_loop_columns(  $columns  ) {
+        $saved = wcz_saved_products_per_row();
+        // Only override the theme/WooCommerce column count when this setting has been saved
+        // or changed in the customizer. Applying the default blocks theme settings such as
+        // Overlay's Products List Columns.
+        if ( false === $saved || '' === $saved ) {
+            return $columns;
+        }
+        return esc_attr( $saved );
     }
 
 }
